@@ -1,15 +1,3 @@
 <template>
-  <require from="./book-list"></require>
-  <h1>Add book</h1>
-
-  <form submit.trigger="addBook()">
-
-    <input value.bind="bookTitle" id="bookTitle" type="text" placeholder="book title..." >
-
-    <input type="submit" value="addBook">
-
-  </form>
-
-  <book-list books.bind="books"></book-list>
-
+  <router-view></router-view>
 </template>
