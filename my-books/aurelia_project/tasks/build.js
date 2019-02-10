@@ -7,6 +7,7 @@ import processCSS from './process-css';
 import copyFiles from './copy-files';
 import watch from './watch';
 import project from '../aurelia.json';
+import copyFonts from './copy-fonts';
 
 let build = gulp.series(
   readProjectConfiguration,
@@ -39,4 +40,14 @@ function writeBundles() {
   return buildCLI.dest();
 }
 
-export { main as default };
+export default gulp.series (
+  readProjectConfiguration,
+  gulp.parallel(
+    transpile,
+    processMarkup,
+    processCSS,
+    copyFiles,
+    copyFonts
+),
+  writeBundles
+);

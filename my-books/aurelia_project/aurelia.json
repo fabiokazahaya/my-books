@@ -57,6 +57,24 @@
             "env": "dev"
           },
           "text",
+          "jquery",
+          {
+             "name": "bootstrap",
+             "path": "../node_modules/bootstrap/dist",
+             "main": "js/bootstrap.bundle.min.js",
+             "deps": [
+               "jquery"
+             ],
+            "exports": "$",
+            "resources": [
+              "css/bootstrap.css"
+             ]
+         },
+         {
+            "name": "font-awesome",
+            "path": "../node_modules/font-awesome/css",
+            "main": "font-awesome.css"
+          },
           {
             "name": "aurelia-fetch-client",
             "main": "aurelia-fetch-client",
@@ -145,7 +163,9 @@
     "elements": "resources/elements",
     "attributes": "resources/attributes",
     "valueConverters": "resources/value-converters",
-    "bindingBehaviors": "resources/binding-behaviors"
+    "bindingBehaviors": "resources/binding-behaviors",
+    "fontsInput": "./node_modules/font-awesome/fonts/**/*.*",
+    "fontsOutput": "./fonts"
   },
   "testFramework": {
     "id": "jasmine",
